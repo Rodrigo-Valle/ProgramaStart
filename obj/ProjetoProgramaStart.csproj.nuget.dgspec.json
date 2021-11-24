@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoProgramaStart\\ProjetoProgramaStart.csproj": {}
+    "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\ProjetoProgramaStart.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoProgramaStart\\ProjetoProgramaStart.csproj": {
+    "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\ProjetoProgramaStart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoProgramaStart\\ProjetoProgramaStart.csproj",
+        "projectUniqueName": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\ProjetoProgramaStart.csproj",
         "projectName": "ProjetoProgramaStart",
-        "projectPath": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoProgramaStart\\ProjetoProgramaStart.csproj",
+        "projectPath": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\ProjetoProgramaStart.csproj",
         "packagesPath": "C:\\Users\\ROTL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoProgramaStart\\obj\\",
+        "outputPath": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ROTL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -57,6 +57,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.12, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.3, )"
             }
           },
           "imports": [
