@@ -66,6 +66,55 @@ namespace ProjetoProgramaStart.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Modulos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Modulos", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "ProgramasStarter",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DataInicio = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DataFim = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProgramasStarter", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Tecnologias",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Descricao = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tecnologias", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -192,6 +241,123 @@ namespace ProjetoProgramaStart.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.CreateTable(
+                name: "Projetos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Avaliacao = table.Column<double>(type: "double", nullable: false),
+                    Etapa = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ModuloId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Projetos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Projetos_Modulos_ModuloId",
+                        column: x => x.ModuloId,
+                        principalTable: "Modulos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Grupos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    TecnologiaId = table.Column<int>(type: "int", nullable: true),
+                    ProgramaStartId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Grupos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Grupos_ProgramasStarter_ProgramaStartId",
+                        column: x => x.ProgramaStartId,
+                        principalTable: "ProgramasStarter",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Grupos_Tecnologias_TecnologiaId",
+                        column: x => x.TecnologiaId,
+                        principalTable: "Tecnologias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Empregados",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Letras = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Cargo = table.Column<int>(type: "int", nullable: false),
+                    ScrumMasterId = table.Column<int>(type: "int", nullable: true),
+                    StarterId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Empregados", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Empregados_Grupos_ScrumMasterId",
+                        column: x => x.ScrumMasterId,
+                        principalTable: "Grupos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Empregados_Grupos_StarterId",
+                        column: x => x.StarterId,
+                        principalTable: "Grupos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Dailys",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Data = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Fazendo = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Feito = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Impedimentos = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Presenca = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    ModuloId = table.Column<int>(type: "int", nullable: true),
+                    EmpregadoId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Dailys", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Dailys_Empregados_EmpregadoId",
+                        column: x => x.EmpregadoId,
+                        principalTable: "Empregados",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Dailys_Modulos_ModuloId",
+                        column: x => x.ModuloId,
+                        principalTable: "Modulos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -228,6 +394,42 @@ namespace ProjetoProgramaStart.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Dailys_EmpregadoId",
+                table: "Dailys",
+                column: "EmpregadoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Dailys_ModuloId",
+                table: "Dailys",
+                column: "ModuloId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Empregados_ScrumMasterId",
+                table: "Empregados",
+                column: "ScrumMasterId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Empregados_StarterId",
+                table: "Empregados",
+                column: "StarterId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Grupos_ProgramaStartId",
+                table: "Grupos",
+                column: "ProgramaStartId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Grupos_TecnologiaId",
+                table: "Grupos",
+                column: "TecnologiaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Projetos_ModuloId",
+                table: "Projetos",
+                column: "ModuloId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -248,10 +450,31 @@ namespace ProjetoProgramaStart.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Dailys");
+
+            migrationBuilder.DropTable(
+                name: "Projetos");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Empregados");
+
+            migrationBuilder.DropTable(
+                name: "Modulos");
+
+            migrationBuilder.DropTable(
+                name: "Grupos");
+
+            migrationBuilder.DropTable(
+                name: "ProgramasStarter");
+
+            migrationBuilder.DropTable(
+                name: "Tecnologias");
         }
     }
 }

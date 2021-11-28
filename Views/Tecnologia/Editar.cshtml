@@ -1,0 +1,23 @@
+@model projetomvc.DTO.TecnologiaDTO
+
+
+
+<form asp-controller="Tecnologia" asp-action="Atualizar" method="POST">
+  <input type="hidden" asp-for="Id">
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label asp-for="Nome">Nome</label>
+      <input type="text" asp-for="Nome" class="form-control" placeholder="Nome">
+    </div>
+  </div>
+
+  <div class="form-group"></div>
+  <label asp-for="Descricao">Descrição</label>
+  <textarea class="form-control" asp-for="Descricao" id="Descricao" rows="3"></textarea>
+  </div>
+
+  <br>
+
+  <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>

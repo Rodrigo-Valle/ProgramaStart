@@ -1,0 +1,29 @@
+@model IEnumerable<projetomvc.Models.Empregado>
+
+<table id="Programas" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Letras</th>
+            <th>Cargo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var empregado in Model) {
+            <tr>
+                <td>@empregado.Id</td>
+                <td>@empregado.Nome</td>
+                <td>@empregado.Letras</td>
+                <td>@empregado.Cargo</td>
+  
+
+                <td>
+                    <button class="btn btn-secondary"><a href="/Colaboradores/Editar/@empregado.Id">Editar</a></button> 
+                    <button class="btn btn-danger"><a href="/Colaboradores/Excluir/@empregado.Id">Excluir</a></button>
+                </td>
+            </tr>
+        }    
+    </tbody>
+
+</table>

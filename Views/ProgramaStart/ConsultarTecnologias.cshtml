@@ -1,0 +1,37 @@
+@model IEnumerable<projetomvc.Models.Tecnologia>
+
+<button class="btn btn-primary btn-lg"><a asp-action="NovaTecnologia" asp-controller="Tecnologia">Cadastrar nova Tecnologia</a></button>
+
+<hr>
+
+
+<table id="tecs" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var tec in Model) {
+            <tr>
+                <td>@tec.Id</td>
+                <td>@tec.Nome</td>
+                <td>@tec.Descricao</td>
+
+                <td>
+                    <button class="btn btn-secondary"><a href="/Tecnologia/Editar/@tec.Id">Editar</a></button> 
+                    <button class="btn btn-danger"><a href="/Tecnologia/Excluir/@tec.Id">Excluir</a></button>
+                </td>
+            </tr>
+        }    
+    </tbody>
+    
+
+</table>
+
+
+
+

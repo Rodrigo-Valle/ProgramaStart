@@ -9,7 +9,7 @@ using ProjetoProgramaStart.Data;
 namespace ProjetoProgramaStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211124142359_CreateIdentitySchema")]
+    [Migration("20211126231235_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -215,6 +215,167 @@ namespace ProjetoProgramaStart.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("projetomvc.Models.Daily", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Data")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int?>("EmpregadoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Fazendo")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Feito")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Impedimentos")
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("ModuloId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Presenca")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpregadoId");
+
+                    b.HasIndex("ModuloId");
+
+                    b.ToTable("Dailys");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Empregado", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cargo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Letras")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("ScrumMasterId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StarterId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ScrumMasterId")
+                        .IsUnique();
+
+                    b.HasIndex("StarterId");
+
+                    b.ToTable("Empregados");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Grupo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProgramaStartId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TecnologiaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProgramaStartId");
+
+                    b.HasIndex("TecnologiaId");
+
+                    b.ToTable("Grupos");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Modulo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Modulos");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.ProgramaStart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataFim")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataInicio")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProgramasStarter");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Projeto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<double>("Avaliacao")
+                        .HasColumnType("double");
+
+                    b.Property<string>("Etapa")
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("ModuloId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ModuloId");
+
+                    b.ToTable("Projetos");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Tecnologia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tecnologias");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -264,6 +425,75 @@ namespace ProjetoProgramaStart.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Daily", b =>
+                {
+                    b.HasOne("projetomvc.Models.Empregado", "Empregado")
+                        .WithMany()
+                        .HasForeignKey("EmpregadoId");
+
+                    b.HasOne("projetomvc.Models.Modulo", "Modulo")
+                        .WithMany()
+                        .HasForeignKey("ModuloId");
+
+                    b.Navigation("Empregado");
+
+                    b.Navigation("Modulo");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Empregado", b =>
+                {
+                    b.HasOne("projetomvc.Models.Grupo", "ScrumMaster")
+                        .WithOne("ScrumMaster")
+                        .HasForeignKey("projetomvc.Models.Empregado", "ScrumMasterId");
+
+                    b.HasOne("projetomvc.Models.Grupo", "Starter")
+                        .WithMany("Starter")
+                        .HasForeignKey("StarterId");
+
+                    b.Navigation("ScrumMaster");
+
+                    b.Navigation("Starter");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Grupo", b =>
+                {
+                    b.HasOne("projetomvc.Models.ProgramaStart", "ProgramaStart")
+                        .WithMany("Grupos")
+                        .HasForeignKey("ProgramaStartId");
+
+                    b.HasOne("projetomvc.Models.Tecnologia", "Tecnologia")
+                        .WithMany()
+                        .HasForeignKey("TecnologiaId");
+
+                    b.Navigation("ProgramaStart");
+
+                    b.Navigation("Tecnologia");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Projeto", b =>
+                {
+                    b.HasOne("projetomvc.Models.Modulo", null)
+                        .WithMany("Projetos")
+                        .HasForeignKey("ModuloId");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Grupo", b =>
+                {
+                    b.Navigation("ScrumMaster");
+
+                    b.Navigation("Starter");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.Modulo", b =>
+                {
+                    b.Navigation("Projetos");
+                });
+
+            modelBuilder.Entity("projetomvc.Models.ProgramaStart", b =>
+                {
+                    b.Navigation("Grupos");
                 });
 #pragma warning restore 612, 618
         }

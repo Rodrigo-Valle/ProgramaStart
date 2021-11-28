@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,21 +10,25 @@ namespace projetomvc.Models
     {
         public int Id { get; set; }
         public Tecnologia Tecnologia { get; set; }
-        public Empregado ScrumMaster { get; set; }
-        public ICollection<Starter> Starter { get; set; } = new List<Starter>();
         public ProgramaStart ProgramaStart { get; set; }
+
+        [InverseProperty("ScrumMaster")]
+        public Empregado ScrumMaster { get; set; }
+        [InverseProperty("Starter")]
+        public ICollection<Empregado> Starter { get; set; } = new List<Empregado>();
+
 
 
         public Grupo()
         {
-            
+
         }
 
-        public Grupo(Tecnologia tecnologia, Empregado scrumMaster, ProgramaStart programaStar)
+        public Grupo(Tecnologia tecnologia, Empregado scrumMaster, ProgramaStart programaStart)
         {
             Tecnologia = tecnologia;
             ScrumMaster = scrumMaster;
-            ProgramaStart = programaStar;
+            ProgramaStart = programaStart;
         }
 
     }

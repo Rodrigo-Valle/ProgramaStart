@@ -1,0 +1,14 @@
+@model projetomvc.DTO.ModuloDTO
+
+<form asp-controller="Modulo" asp-action="Atualizar" method="POST">
+  <input type="hidden" asp-for="Id">  
+  
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label asp-for="Nome">Nome</label>
+      <input type="text" asp-for="Nome" class="form-control" placeholder="Nome">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>

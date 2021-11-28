@@ -1,0 +1,35 @@
+@model IEnumerable<projetomvc.Models.Modulo>
+
+<button class="btn btn-primary btn-lg"><a asp-action="NovoModulo" asp-controller="Modulo">Cadastrar novo modulo</a></button>
+
+<hr>
+
+
+<table id="Programas" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var modulo in Model) {
+            <tr>
+                <td>@modulo.Id</td>
+                <td>@modulo.Nome</td>
+
+                <td>
+                    <button class="btn btn-secondary"><a href="/Modulo/Editar/@modulo.Id">Editar</a></button> 
+                    <button class="btn btn-danger"><a href="/Modulo/Excluir/@modulo.Id">Excluir</a></button>
+                </td>
+            </tr>
+        }    
+    </tbody>
+    
+
+</table>
+
+
+
+

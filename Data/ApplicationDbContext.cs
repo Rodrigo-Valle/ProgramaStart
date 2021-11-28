@@ -14,7 +14,6 @@ namespace ProjetoProgramaStart.Data
         public DbSet<Tecnologia> Tecnologias { get; set; }
         public DbSet<Modulo> Modulos { get; set; }
         public DbSet<Daily> Dailys { get; set; }
-        public DbSet<Starter> Starters { get; set; }
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<ProgramaStart> ProgramasStarter { get; set; }
         

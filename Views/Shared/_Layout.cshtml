@@ -1,49 +1,108 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ProjetoProgramaStart</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css//bootstrap-flatly.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ProjetoProgramaStart</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - ProjetoProgramaStart - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <h1>Programa Start</h1>
+
+
+    </header>
+    <aside>
+        <div>
+            <ul class="sidebar">
+                <li>
+                    <a class="linkmenu" asp-action="Index" asp-controller="Home">Home</a>
+
+                </li>
+                <li>
+                    <a class="linkmenu" data-toggle="collapse" href="#collapsePrograma" role="button"
+                        aria-expanded="false" aria-controls="collapsePrograma">
+                        Programa Start
+                    </a>
+                    <div class="collapse" id="collapsePrograma">
+                        <ul>
+                            <li>
+                                <a class="linkmenu" asp-action="Consultar" asp-controller="ProgramaStart">Consultar</a>
+                            </li>
+                            <li>
+                                <a class="linkmenu" asp-action="Cadastrar" asp-controller="ProgramaStart">Cadastrar</a>
+                            </li>
+                            <li>
+                                <a class="linkmenu" asp-action="ConsultarModulos" asp-controller="ProgramaStart">Modulos</a>
+                            </li>
+                            <li>
+                                <a class="linkmenu" asp-action="ConsultarTecnologias" asp-controller="ProgramaStart">Tecnologias</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a class="linkmenu" data-toggle="collapse" href="#collapseColaboradores" role="button"
+                        aria-expanded="false" aria-controls="collapseColaboradores">
+                        Colaboradores
+                    </a>
+                    <div class="collapse" id="collapseColaboradores">
+                        <ul>
+                            <li>
+                                <a class="linkmenu" asp-action="Consultar" asp-controller="Colaboradores">Consultar</a>
+                            </li>
+                            <li>
+                                <a class="linkmenu" asp-action="Cadastrar" asp-controller="Colaboradores">Cadastrar</a>
+                            </li>
+                            <li>
+                                <a class="linkmenu" asp-action="Avaliacao" asp-controller="Colaboradores">Avaliações</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a class="linkmenu" data-toggle="collapse" href="#collapseEquipes" role="button"
+                        aria-expanded="false" aria-controls="collapseEquipes">
+                        Grupos
+                    </a>
+                    <div class="collapse" id="collapseEquipes">
+                        <ul>
+                            <li>
+                                <a class="linkmenu" asp-action="Consultar" asp-controller="Grupo">Consultar</a>
+                            </li>
+                            <li>
+                                <a class="linkmenu" asp-action="Criar" asp-controller="Grupo">Criar</a>
+                            </li>
+                            <li>
+                                <a class="linkmenu" asp-action="Gerenciar" asp-controller="Grupo">Gerenciar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
         </div>
-    </footer>
+
+    </aside>
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

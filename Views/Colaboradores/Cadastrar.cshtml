@@ -1,0 +1,34 @@
+@model projetomvc.DTO.EmpregadoDTO
+
+<form asp-controller="Colaboradores" asp-action="Salvar" method="POST">
+    <input type="hidden" asp-for="Id" value="0">
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Nome">Nome</label>
+            <input type="text" asp-for="Nome" class="form-control" placeholder="Nome">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label asp-for="Letras">Letras</label>
+            <input type="text" asp-for="Letras" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Cargo">Cargo</label><br>
+        <select asp-for="Cargo" class="custom-select col-md-2">
+            <option selected=""></option>
+            <option value="0">Administrador</option>
+            <option value="1">ScrumMaster</option>
+            <option value="2">Starter</option>
+        </select>
+        
+    </div>
+
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>
