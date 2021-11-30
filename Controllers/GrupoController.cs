@@ -21,7 +21,7 @@ namespace projetomvc.Controllers
             var lista = _database.Grupos.Include(x => x.Tecnologia).Include(x => x.ProgramaStart).Include(x => x.ScrumMaster).ToList();
             return View(lista);
         }
-        public IActionResult Criar(){
+        /*public IActionResult Criar(){
             ViewBag.Tec = _database.Tecnologias.ToList();
             ViewBag.Empregado = _database.Empregados.Where(x => x.Cargo == Cargo.ScrumMaster && x.ScrumMasterId == null).ToList();
             ViewBag.ProgramaStart = _database.ProgramasStarter.ToList();
@@ -85,6 +85,6 @@ namespace projetomvc.Controllers
             _database.Grupos.Remove(grupo);
             _database.SaveChanges();
             return RedirectToAction("Consultar", "Grupo");
-        }
+        }*/
     }
 }

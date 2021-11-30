@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ProjetoProgramaStart</title>
+    <title>@ViewData["Title"] - ProjetoProgramaStart - Admin</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css//bootstrap-flatly.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -12,7 +12,7 @@
 <body>
     <header>
 
-        <h1>Programa Start</h1>
+        <h1>Programa Start - Admin</h1>
 
 
     </header>
@@ -37,10 +37,12 @@
                                 <a class="linkmenu" asp-action="Cadastrar" asp-controller="ProgramaStart">Cadastrar</a>
                             </li>
                             <li>
-                                <a class="linkmenu" asp-action="ConsultarModulos" asp-controller="ProgramaStart">Modulos</a>
+                                <a class="linkmenu" asp-action="ConsultarModulos"
+                                    asp-controller="ProgramaStart">Modulos</a>
                             </li>
                             <li>
-                                <a class="linkmenu" asp-action="ConsultarTecnologias" asp-controller="ProgramaStart">Tecnologias</a>
+                                <a class="linkmenu" asp-action="ConsultarTecnologias"
+                                    asp-controller="ProgramaStart">Tecnologias</a>
                             </li>
                         </ul>
                     </div>
@@ -85,8 +87,17 @@
                         </ul>
                     </div>
                 </li>
+                
+                <div class="barra"></div>
+
+                <li>
+                    <a class="linkmenu" asp-action="Index" asp-controller="Scrum">Area Scrum Master</a>
+
+                </li>
 
             </ul>
+            
+
         </div>
 
     </aside>

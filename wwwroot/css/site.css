@@ -66,3 +66,11 @@ button a {
 button a:hover {
   color: inherit;
 }
+
+.barra{
+  height: 2px;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: white;
+}
