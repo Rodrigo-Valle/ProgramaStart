@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using projetomvc.Data;
 using projetomvc.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace ProjetoProgramaStart
 {
@@ -42,6 +43,10 @@ namespace ProjetoProgramaStart
             services.AddAuthorization(options => options.AddPolicy("Scrum", policy => policy.RequireClaim("Permissao","ScrumMaster","Administrador")));
 
             services.AddScoped<SeedingService>();
+
+            services.ConfigureApplicationCookie(options => options.LoginPath = new PathString("/Home/Login"));
+            services.ConfigureApplicationCookie(options => options.LogoutPath = new PathString("/Home/Logout"));
+            services.ConfigureApplicationCookie(options => options.AccessDeniedPath = new PathString("/Home/AcessoNegado"));
             
         }
 

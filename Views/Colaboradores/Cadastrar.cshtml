@@ -3,12 +3,11 @@
 <form asp-controller="Colaboradores" asp-action="Salvar" method="POST">
     <input type="hidden" asp-for="Id" value="0">
 
-
-
     <div class="form-row">
         <div class="form-group col-md-6">
             <label asp-for="Nome">Nome</label>
             <input type="text" asp-for="Nome" class="form-control" placeholder="Nome">
+            <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
     </div>
 
@@ -16,6 +15,7 @@
         <div class="form-group col-md-4">
             <label asp-for="Letras">Letras</label>
             <input type="text" asp-for="Letras" class="form-control">
+            <span asp-validation-for="Letras" class="text-danger"></span>
         </div>
     </div>
 
@@ -27,8 +27,8 @@
             <option selected=""></option>
             <option value="0">Administrador</option>
             <option value="1">ScrumMaster</option>
-            <option value="2">Starter</option>
         </select>
+        <span asp-validation-for="Cargo" class="text-danger"></span>
 
     </div>
 
@@ -36,6 +36,7 @@
         <div class="form-group col-md-6">
             <label asp-for="Email">Email</label>
             <input type="text" asp-for="Email" class="form-control" placeholder="Nome">
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
     </div>
 
@@ -43,8 +44,13 @@
         <div class="form-group col-md-6">
             <label asp-for="Senha">Senha</label>
             <input type="text" asp-for="Senha" class="form-control" placeholder="Nome">
+            <span asp-validation-for="Senha" class="text-danger"></span>
         </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Confirmar</button>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

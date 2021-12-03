@@ -1,5 +1,6 @@
 
 .text-center {
+    color: rgb(243, 243, 243);
     text-align: center!important;
 }
 
@@ -8,7 +9,17 @@
     padding-bottom: 20px;
 }
 
+main{
+    background-color: rgba(58, 59, 80, 0.335);
+    padding: 20px;
+    border-radius: 10%;
+}
+
 body {
+    background-image: Url("/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;

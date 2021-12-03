@@ -1,3 +1,52 @@
 @{
     Layout = "~/Views/Shared/_LayoutScrum.cshtml";
 }
+
+@model projetomvc.Models.Grupo
+
+    
+
+<script>
+    $(document).ready(function () {
+        $('#modelo').DataTable({
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros por paginas",
+                "zeroRecords": "Nada encontrado",
+                "info": "Mostrando a pagina _PAGE_ de _PAGES_",
+                "infoEmpty": "Nada a exibir",
+                "infoFiltered": "(filtrado de _MAX_ registros)"
+            }
+        });
+    });
+</script>
+
+
+<h1>Meu Grupo</h1>
+
+<hr>
+<br>
+
+<table id="modelo" class="table table-sm table-hover table-striped table-bordered">
+    <thead>
+        <tr class="table-primary">
+            <th>Id</th>
+            <th>ScrumMaster</th>
+            <th>Starter</th>
+            <th></th>
+         </tr>
+    </thead>
+    <tbody> 
+        @foreach(var st in @ViewBag.Starter) {
+            <tr>
+                <td>@st.Id</td> 
+                <td>@st.Nome</td>
+                <td>@st.Letras</td>
+                <td>
+                    <button class="btn btn-success"><a href="/Daily/Registrar/@st.Id">Registrar Daily</a></button> 
+                    <button class="btn btn-primary"><a href="/Daily/Consultar/@st.Id">Consultar Daily</a></button>
+                </td>
+            </tr>
+        }    
+    </tbody>
+
+</table>

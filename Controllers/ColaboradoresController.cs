@@ -79,7 +79,15 @@ namespace projetomvc.Controllers
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
+                return RedirectToAction("Consultar", "Colaboradores");
+            }else{
+                return RedirectToAction("Cadastrar", "Colaboradores", empregado);
             }
+        }
+
+        public async Task<IActionResult> Excluir(string id){
+            var user = await _userManager.FindByIdAsync(id);
+            var result = await _userManager.DeleteAsync(user);
             return RedirectToAction("Consultar", "Colaboradores");
         }
 

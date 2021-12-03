@@ -77,8 +77,6 @@ namespace projetomvc.Data
             ProjetoStarter p6 = new ProjetoStarter(st1, pj6, 7.5);
             ProjetoStarter p7 = new ProjetoStarter(st2, pj1, 8.9);
             ProjetoStarter p8 = new ProjetoStarter(st2, pj2, 6.9);
-            ProjetoStarter p9 = new ProjetoStarter(st2, pj1, 7.9);
-            ProjetoStarter p10 = new ProjetoStarter(st2, pj2, 8.4);
             ProjetoStarter p11 = new ProjetoStarter(st2, pj3, 3.9);
             ProjetoStarter p12 = new ProjetoStarter(st2, pj4, 9.2);
             ProjetoStarter p13 = new ProjetoStarter(st2, pj5, 6.9);
@@ -89,18 +87,14 @@ namespace projetomvc.Data
             ProjetoStarter p18 = new ProjetoStarter(st3, pj4, 8.4);
             ProjetoStarter p19 = new ProjetoStarter(st3, pj5, 3.9);
             ProjetoStarter p20 = new ProjetoStarter(st3, pj6, 9.2);
-            ProjetoStarter p21 = new ProjetoStarter(st3, pj1, 6.9);
-            ProjetoStarter p22 = new ProjetoStarter(st3, pj2, 7.5);
-            ProjetoStarter p23 = new ProjetoStarter(st4, pj3, 8.9);
-            ProjetoStarter p24 = new ProjetoStarter(st4, pj4, 6.9);
-            ProjetoStarter p25 = new ProjetoStarter(st4, pj5, 7.9);
-            ProjetoStarter p26 = new ProjetoStarter(st4, pj6, 8.4);
-            ProjetoStarter p27 = new ProjetoStarter(st4, pj1, 3.9);
-            ProjetoStarter p28 = new ProjetoStarter(st4, pj2, 9.2);
-            ProjetoStarter p29 = new ProjetoStarter(st4, pj3, 6.9);
-            ProjetoStarter p30 = new ProjetoStarter(st4, pj4, 7.5);
-            ProjetoStarter p31 = new ProjetoStarter(st4, pj5, 8.9);
-            ProjetoStarter p32 = new ProjetoStarter(st4, pj6, 6.9);
+
+
+            ProjetoStarter p21 = new ProjetoStarter(st4, pj1, 3.9);
+            ProjetoStarter p22 = new ProjetoStarter(st4, pj2, 9.2);
+            ProjetoStarter p23 = new ProjetoStarter(st4, pj3, 6.9);
+            ProjetoStarter p24 = new ProjetoStarter(st4, pj4, 7.5);
+            ProjetoStarter p10 = new ProjetoStarter(st4, pj5, 8.9);
+            ProjetoStarter p9 = new ProjetoStarter(st4, pj6, 6.9);
 
             Daily d1 = new Daily(new DateTime(2021, 4, 15), "Estudando CRUD", "Terminou video 1", "Nenhum", true, mod1, st1);
             Daily d2 = new Daily(new DateTime(2021, 4, 26), "Criando Autorização", "Fez o front end", "Dificuldade com Bootstrap", true, mod1, st1);
@@ -146,7 +140,7 @@ namespace projetomvc.Data
             _database.Grupos.AddRange(gr1, gr2);
             _database.Starters.AddRange(st1, st2, st3, st4, st5, st6, st7, st8);
             _database.Projetos.AddRange(pj1, pj2, pj3, pj4, pj5, pj6);
-            _database.ProjetosStarters.AddRange(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26 ,p27 , p28, p29, p30, p32, p31);
+            _database.ProjetosStarters.AddRange(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24);
             _database.Dailys.AddRange(d1, d2, d3, d4, d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30,d31,d32);
             _database.SaveChanges();
         }

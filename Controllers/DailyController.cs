@@ -46,10 +46,10 @@ namespace projetomvc.Controllers
             daily.Modulo = _database.Modulos.First(x => x.Id == dto.Modulo);
             _database.Dailys.Add(daily);
             _database.SaveChanges();
-            return RedirectToAction("ConsultarGrupo","Scrum");
+            return RedirectToAction("Consultar","Daily");
             }
             else{
-                return RedirectToAction("ConsultarGrupo","Scrum");
+                return RedirectToAction("Registrar","Scrum", dto);
             }
         }
         public IActionResult Consultar(int id){

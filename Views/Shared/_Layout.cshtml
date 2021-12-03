@@ -7,14 +7,24 @@
     <title>@ViewData["Title"] - ProjetoProgramaStart - Admin</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css//bootstrap-flatly.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+
 </head>
 
 <body>
     <header>
-
-        <h1>Programa Start - Admin</h1>
-
-
+        <div class="titulo"><h1>Programa Start - Admin</h1></div>
+        <div class="logout">
+            <p class="linkmenu">Olá @User.Identity.Name!</p>
+            <a class="linkmenu" asp-action="Logout" asp-controller="Home">Logout</a>
+        </div>
     </header>
     <aside>
         <div>
@@ -29,7 +39,7 @@
                         Programa Start
                     </a>
                     <div class="collapse" id="collapsePrograma">
-                        <ul>
+                        <ul  class="sidebar">
                             <li>
                                 <a class="linkmenu" asp-action="Consultar" asp-controller="ProgramaStart">Consultar</a>
                             </li>
@@ -54,7 +64,7 @@
                         Colaboradores
                     </a>
                     <div class="collapse" id="collapseColaboradores">
-                        <ul>
+                        <ul class="sidebar">
                             <li>
                                 <a class="linkmenu" asp-action="Consultar" asp-controller="Colaboradores">Consultar</a>
                             </li>
@@ -70,15 +80,12 @@
                     Starters
                 </a>
                 <div class="collapse" id="collapseStarters">
-                    <ul>
+                    <ul class="sidebar">
                         <li>
                             <a class="linkmenu" asp-action="Consultar" asp-controller="Starter">Consultar</a>
                         </li>
                         <li>
                             <a class="linkmenu" asp-action="Cadastrar" asp-controller="Starter">Cadastrar</a>
-                        </li>
-                        <li>
-                            <a class="linkmenu" asp-action="Cadastrar" asp-controller="#">Avaliações</a>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +95,7 @@
                         Grupos
                     </a>
                     <div class="collapse" id="collapseEquipes">
-                        <ul>
+                        <ul class="sidebar">
                             <li>
                                 <a class="linkmenu" asp-action="Consultar" asp-controller="Grupo">Consultar</a>
                             </li>
@@ -124,9 +131,6 @@
 
 
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

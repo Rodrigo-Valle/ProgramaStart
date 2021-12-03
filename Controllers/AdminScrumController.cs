@@ -26,9 +26,5 @@ namespace projetomvc.Controllers
             var lista = _database.Grupos.Include(x => x.Tecnologia).Include(x => x.ProgramaStart).Include(x => x.ScrumMaster).ToList();
             return View(lista);
         }
-
-
-
-        
     }
 }

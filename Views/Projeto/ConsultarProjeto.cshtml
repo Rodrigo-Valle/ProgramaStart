@@ -1,0 +1,49 @@
+@model IEnumerable<projetomvc.Models.Projeto>
+
+<script>
+    $(document).ready(function () {
+        $('#modelo').DataTable({
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros por paginas",
+                "zeroRecords": "Nada encontrado",
+                "info": "Mostrando a pagina _PAGE_ de _PAGES_",
+                "infoEmpty": "Nada a exibir",
+                "infoFiltered": "(filtrado de _MAX_ registros)"
+            }
+        });
+    });
+</script>
+
+
+<h1>Projetos</h1>
+
+<hr>
+<br>
+
+<table id="modelo" class="table table-sm table-hover table-striped table-bordered">
+    <thead>
+        <tr class="table-primary">
+            <th>Id</th>
+            <th>Etapa</th>
+            <th>Modulo</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var projeto in Model) {
+            <tr>
+                <td>@projeto.Id</td>
+                <td>@projeto.Etapa</td>
+                <td>@projeto.Modulo.Nome</td>
+
+                <td>
+                    <button class="btn btn-secondary"><a href="/Projeto/Editar/@projeto.Id">Editar</a></button> 
+                    <button class="btn btn-danger"><a href="/Projeto/Excluir/@projeto.Id">Excluir</a></button>
+                </td>
+            </tr>
+        }    
+    </tbody>
+    
+
+</table>

@@ -1,6 +1,8 @@
 @model projetomvc.DTO.TecnologiaDTO
 
-
+<h1>Editar Tecnologia</h1>
+<hr>
+<br>
 
 <form asp-controller="Tecnologia" asp-action="Atualizar" method="POST">
   <input type="hidden" asp-for="Id">
@@ -9,15 +11,21 @@
     <div class="form-group col-md-6">
       <label asp-for="Nome">Nome</label>
       <input type="text" asp-for="Nome" class="form-control" placeholder="Nome">
+      <span asp-validation-for="Nome" class="text-danger"></span>
     </div>
   </div>
 
   <div class="form-group"></div>
   <label asp-for="Descricao">Descrição</label>
-  <textarea class="form-control" asp-for="Descricao" id="Descricao" rows="3"></textarea>
+  <textarea class="form-control" asp-for="Descricao" id="Descricao" rows="3" placeholder="Descrição"></textarea>
+  <span asp-validation-for="Descricao" class="text-danger"></span>
   </div>
 
   <br>
 
   <button type="submit" class="btn btn-primary">Confirmar</button>
 </form>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -15704,13 +15704,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\Criar.cshtml",
-      "TargetPath": "Views\\Grupo\\Criar.cshtml",
+      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Home\\AcessoNegado.cshtml",
+      "TargetPath": "Views\\Home\\AcessoNegado.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Scrum\\ConsultarGrupo.cshtml",
-      "TargetPath": "Views\\Scrum\\ConsultarGrupo.cshtml",
+      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\Criar.cshtml",
+      "TargetPath": "Views\\Grupo\\Criar.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15724,6 +15724,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\EditarAvaliacao.cshtml",
+      "TargetPath": "Views\\Starter\\EditarAvaliacao.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\ProgramaStart\\ConsultarModulos.cshtml",
       "TargetPath": "Views\\ProgramaStart\\ConsultarModulos.cshtml",
       "FileKind": "mvc"
@@ -15731,6 +15736,11 @@
     {
       "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Projeto\\Editar.cshtml",
+      "TargetPath": "Views\\Projeto\\Editar.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15744,6 +15754,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Projeto\\ConsultarProjeto.cshtml",
+      "TargetPath": "Views\\Projeto\\ConsultarProjeto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Shared\\_LayoutLogin.cshtml",
       "TargetPath": "Views\\Shared\\_LayoutLogin.cshtml",
       "FileKind": "mvc"
@@ -15751,6 +15766,11 @@
     {
       "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\Editar.cshtml",
       "TargetPath": "Views\\Starter\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\Avaliacao.cshtml",
+      "TargetPath": "Views\\Starter\\Avaliacao.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15774,6 +15794,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\Avaliar.cshtml",
+      "TargetPath": "Views\\Starter\\Avaliar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Tecnologia\\NovaTecnologia.cshtml",
       "TargetPath": "Views\\Tecnologia\\NovaTecnologia.cshtml",
       "FileKind": "mvc"
@@ -15781,11 +15806,6 @@
     {
       "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\ProgramaStart\\ConsultarProjetos.cshtml",
-      "TargetPath": "Views\\ProgramaStart\\ConsultarProjetos.cshtml",
       "FileKind": "mvc"
     },
     {

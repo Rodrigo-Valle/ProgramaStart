@@ -47,7 +47,7 @@ namespace projetomvc.Controllers
             }
             else
             {
-                return RedirectToAction("Consultar", "Grupo");
+                return RedirectToAction("Criar", "Grupo", dto);
             }
 
 

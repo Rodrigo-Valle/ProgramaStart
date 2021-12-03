@@ -1,0 +1,55 @@
+@model IEnumerable<projetomvc.Models.ProjetoStarter>
+
+<script>
+    $(document).ready(function () {
+        $('#modelo').DataTable({
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros por paginas",
+                "zeroRecords": "Nada encontrado",
+                "info": "Mostrando a pagina _PAGE_ de _PAGES_",
+                "infoEmpty": "Nada a exibir",
+                "infoFiltered": "(filtrado de _MAX_ registros)"
+            }
+        });
+    });
+</script> 
+
+
+
+
+<h1>Avaliações de @ViewBag.Starter.Nome</h1>
+
+<hr>
+<br>
+<button class="btn btn-success btn-lg"><a href="/Starter/Avaliar/@ViewBag.Starter.Id">Avaliar novo projeto</a></button>
+<br>
+<hr>
+<br>
+
+<table id="modelo" class="table table-sm table-hover table-striped table-bordered">
+    <thead>
+        <tr class="table-primary">
+            <th>Id</th>
+            <th>Etapa</th>
+            <th>Nota</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ps in Model)
+        {
+
+            <tr>
+                <td>@ps.Id</td>
+                <td>@ps.Projeto.Etapa</td>
+                <td>@ps.Avaliacao.ToString("F1")</td>
+
+                <td>
+                    <button class="btn btn-success"><a href="/Starter/EditarAvaliacao/@ps.Id">Editar</a></button>
+                    <button class="btn btn-primary"><a href="/Starter/ExcluirAvaliacao/@ps.Id">Excluir</a></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

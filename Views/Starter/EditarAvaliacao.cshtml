@@ -1,0 +1,32 @@
+@model projetomvc.DTO.ProjetoStarterDTO
+
+<h1>Editar Avaliação do Starter @ViewBag.Starter.Nome</h1>
+<hr>
+<br>
+
+<form asp-controller="Starter" asp-action="AtualizarAvaliacao" method="POST">
+    <input type="hidden" asp-for="StarterId" value="@ViewBag.Starter.Id">
+    <input type="hidden" asp-for="Id">
+
+
+    <div class="row">
+        <div class="form-group col-md-1 col">
+            <label asp-for="Avaliacao">Avaliacão </label>
+            <input class="form-control" type="number" asp-for="Avaliacao">
+            <span asp-validation-for="Avaliacao" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col-md-6 col">
+            <label asp-for="ProjetoId">Projeto</label>
+            <select class="form-control" asp-for="ProjetoId"
+                asp-items='@(new SelectList(@ViewBag.Projeto,"Id","Etapa"))'></select>
+            <span asp-validation-for="ProjetoId" class="text-danger"></span>
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

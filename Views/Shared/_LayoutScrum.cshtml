@@ -7,43 +7,61 @@
     <title>@ViewData["Title"] - ProjetoProgramaStart</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css//bootstrap-flatly.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+
+
+
 </head>
 
 <body>
     <header>
 
-        <h1>Programa Start - Scrum Master</h1>
+        <div class="titulo">
+            <h1>Programa Start - Scrum Master</h1>
+        </div>
+        <div class="logout">
+            <p class="linkmenu">Olá @User.Identity.Name!</p>   
+            <a class="linkmenu" asp-action="Logout" asp-controller="Home">Logout</a>
+        </div>
 
     </header>
     <aside>
         <div>
             <ul class="sidebar">
-                <li>
-                    <a class="linkmenu" asp-action="Index" asp-controller="Scrum">Home</a>
-
-                </li>
-                <li>
+            @if (User.HasClaim("Permissao", "ScrumMaster")){ <li>
                     <a class="linkmenu" asp-action="ConsultarGrupo" asp-controller="Scrum">Meu grupo</a>
-                </li>
+                </li>}
 
-                <div class="barra"></div>  
-
-                <li>
-                    <a class="linkmenu" data-toggle="collapse" href="#collapseEquipes" role="button"
+                @if (User.HasClaim("Permissao", "Administrador"))
+                {
+                    <li>
+                        <a class="linkmenu" data-toggle="collapse" href="#collapseEquipes" role="button"
                         aria-expanded="false" aria-controls="collapseEquipes">
-                        Admin
-                    </a>
-                    <div class="collapse" id="collapseEquipes">
-                        <ul>
-                            <li>
-                                <a class="linkmenu" asp-action="Consultar" asp-controller="AdminScrum">Consultar Grupos</a>
-                            </li>
-                            <li>
-                                <a class="linkmenu" asp-action="Index" asp-controller="Home">Retornar Admin</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                            Grupos
+                        </a>
+                        <div class="collapse" id="collapseEquipes">
+                            <ul class="sidebar">
+                                <li>
+                                    <a class="linkmenu" asp-action="Consultar" asp-controller="AdminScrum">Consultar
+                                        Grupos</a>
+                                </li>
+                                <li>
+                                    <a class="linkmenu" asp-action="Index" asp-controller="Home">Retornar Admin</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                }
+
+
+
             </ul>
         </div>
 
@@ -53,9 +71,7 @@
         @RenderBody()
     </main>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

@@ -2,14 +2,18 @@
 
 <form asp-controller="Grupo" asp-action="SalvarStarter" method="POST">
 
-    <input type="hidden" asp-for="Id">
+  <input type="hidden" asp-for="Id">
 
   <div class="form-group col-md-8">
     <label asp-for="Starter">Scrum Master</label>
     <select class="form-control" asp-for="Starter"
       asp-items='@(new SelectList(@ViewBag.Starters,"Id","Nome"))'></select>
+    <span asp-validation-for="Starter" class="text-danger"></span>
   </div>
 
   <button type="submit" class="btn btn-primary">Confirmar</button>
 </form>
 
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
