@@ -23,27 +23,7 @@
 
                 </li>
                 <li>
-                    <a class="linkmenu" data-toggle="collapse" href="#collapsePrograma" role="button"
-                        aria-expanded="false" aria-controls="collapsePrograma">
-                        Meu grupo
-                    </a>
-                </li>
-
-                <li>
-                    <a class="linkmenu" data-toggle="collapse" href="#collapseColaboradores" role="button"
-                        aria-expanded="false" aria-controls="collapseColaboradores">
-                        Dailys
-                    </a>
-                    <div class="collapse" id="collapseColaboradores">
-                        <ul>
-                            <li>
-                                <a class="linkmenu" asp-action="Consultar" asp-controller="Colaboradores">Consultar</a>
-                            </li>
-                            <li>
-                                <a class="linkmenu" asp-action="Cadastrar" asp-controller="Colaboradores">Cadastrar</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <a class="linkmenu" asp-action="ConsultarGrupo" asp-controller="Scrum">Meu grupo</a>
                 </li>
 
                 <div class="barra"></div>  
@@ -56,13 +36,10 @@
                     <div class="collapse" id="collapseEquipes">
                         <ul>
                             <li>
-                                <a class="linkmenu" asp-action="Consultar" asp-controller="Grupo">Consultar Grupos</a>
+                                <a class="linkmenu" asp-action="Consultar" asp-controller="AdminScrum">Consultar Grupos</a>
                             </li>
                             <li>
-                                <a class="linkmenu" asp-action="Criar" asp-controller="Grupo">Consultar Daylis</a>
-                            </li>
-                            <li>
-                                <a class="linkmenu" asp-action="Gerenciar" asp-controller="Grupo">Retornar Admin</a>
+                                <a class="linkmenu" asp-action="Index" asp-controller="Home">Retornar Admin</a>
                             </li>
                         </ul>
                     </div>

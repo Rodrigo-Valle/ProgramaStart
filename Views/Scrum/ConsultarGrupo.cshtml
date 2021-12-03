@@ -1,0 +1,32 @@
+@{
+    Layout = "~/Views/Shared/_LayoutScrum.cshtml";
+}
+
+@model projetomvc.Models.Grupo
+
+    
+
+<table id="grupos" class="table table-striped table-bordered">
+    <h1>Grupo</h1>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>ScrumMaster</th>
+            <th>Starter</th>
+         </tr>
+    </thead>
+    <tbody> 
+        @foreach(var st in @ViewBag.Starter) {
+            <tr>
+                <td>@st.Id</td> 
+                <td>@st.Nome</td>
+                <td>@st.Letras</td>
+                <td>
+                    <button class="btn btn-success"><a href="/Daily/Registrar/@st.Id">Registrar Daily</a></button> 
+                    <button class="btn btn-primary"><a href="/Daily/Consultar/@st.Id">Consultar Daily</a></button>
+                </td>
+            </tr>
+        }    
+    </tbody>
+
+</table>

@@ -11,11 +11,8 @@ namespace projetomvc.Models
         public int Id { get; set; }
         public Tecnologia Tecnologia { get; set; }
         public ProgramaStart ProgramaStart { get; set; }
-
-        [InverseProperty("ScrumMaster")]
         public Empregado ScrumMaster { get; set; }
-        [InverseProperty("Starter")]
-        public ICollection<Empregado> Starter { get; set; } = new List<Empregado>();
+        public ICollection<Starter> Starter { get; set; } = new List<Starter>();
 
 
 

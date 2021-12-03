@@ -1,8 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using projetomvc.DTO;
 using projetomvc.Models;
 using projetomvc.Models.Enum;
@@ -10,85 +16,74 @@ using ProjetoProgramaStart.Data;
 
 namespace projetomvc.Controllers
 {
+    [Authorize(Policy = "Admin")]
     public class ColaboradoresController : Controller
     {
 
-        private readonly ApplicationDbContext _database;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<RegisterModel> _logger;
+        private readonly IEmailSender _emailSender;
+        public readonly ApplicationDbContext _database;
 
-        public ColaboradoresController(ApplicationDbContext database)
+        public ColaboradoresController(
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
+            ILogger<RegisterModel> logger,
+            IEmailSender emailSender,
+            ApplicationDbContext database)
         {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _logger = logger;
+            _emailSender = emailSender;
             _database = database;
         }
 
-        public IActionResult Cadastrar()
-        {
-            return View();
-        }
-
-
-        public IActionResult Consultar()
-        {
+        public IActionResult Consultar(){
             var lista = _database.Empregados.ToList();
             return View(lista);
         }
+        public IActionResult Cadastrar(){
+            return View();
+        }
 
         [HttpPost]
-        public IActionResult Salvar(EmpregadoDTO dto)
+        public async Task<IActionResult> Salvar(EmpregadoDTO empregado)
         {
             if (ModelState.IsValid)
             {
-                Empregado empregado = new Empregado();
-                empregado.Id = dto.Id;
-                empregado.Nome = dto.Nome;
-                empregado.Letras = dto.Letras;
-                empregado.Cargo = Enum.Parse<Cargo>(dto.Cargo);
-                
-                _database.Empregados.Update(empregado);
-                _database.SaveChanges();
-                return RedirectToAction("Consultar", "Colaboradores");
-            }
-            else
-            {
-                return RedirectToAction("Colaboradores", "Consultar");
-            }
-        }
+                // Copia os dados do RegisterViewModel para o IdentityUser
+                var user = new Empregado
+                {
+                    UserName = empregado.Email,
+                    Email = empregado.Email,
+                    Nome = empregado.Nome,
+                    Letras = empregado.Letras,
+                    Cargo = Enum.Parse<Cargo>(empregado.Cargo)
+                };
+                // Armazena os dados do usuário na tabela AspNetUsers
+                var result = await _userManager.CreateAsync(user, empregado.Senha);
+                await _userManager.AddClaimAsync(user, new Claim("Permissao", user.Cargo.ToString()));
 
-        public IActionResult Editar(int id)
-        {
-            var empregado = _database.Empregados.First(x => x.Id == id);
-            EmpregadoDTO dto = new EmpregadoDTO();
-            dto.Id = empregado.Id;
-            dto.Letras = empregado.Letras;
-            dto.Nome = empregado.Nome;
-            dto.Cargo = empregado.Cargo.ToString();
-            return View(dto);
-        }
-
-        public IActionResult Atualizar(EmpregadoDTO dto)
-        {
-            if (ModelState.IsValid)
-            {
-                Empregado empregado = new Empregado();
-                empregado.Id = dto.Id;
-                empregado.Nome = dto.Nome;
-                empregado.Letras = dto.Letras;
-                empregado.Cargo = Enum.Parse<Cargo>(dto.Cargo);
-                _database.Empregados.Update(empregado);
-                _database.SaveChanges();
-                return RedirectToAction("Consultar", "Colaboradores");
+                // Se o usuário foi criado com sucesso, faz o login do usuário
+                // usando o serviço SignInManager e redireciona para o Método Action Index
+                //if (result.Succeeded)
+                //{
+                //    await _signInManager.SignInAsync(user, isPersistent: false);
+                //    return RedirectToAction("index", "home");
+                //}
+                // Se houver erros então inclui no ModelState
+                // que será exibido pela tag helper summary na validação
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
             }
-            else
-            {
-                return RedirectToAction("Colaboradores", "Consultar");
-            }
-        }
-
-        public IActionResult Excluir(int id)
-        {
-            var empregado = _database.Empregados.First(x => x.Id == id);
-            _database.Empregados.Remove(empregado);
-            _database.SaveChanges();
             return RedirectToAction("Consultar", "Colaboradores");
         }
+
+
+
     }
 }

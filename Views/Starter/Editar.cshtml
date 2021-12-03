@@ -1,0 +1,22 @@
+@model projetomvc.DTO.StarterDTO
+
+<form asp-controller="Starter" asp-action="Atualizar" method="POST">
+    <input type="hidden" asp-for="Id">
+    <input type="hidden" asp-for="Cargo">
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Nome">Nome</label>
+            <input type="text" asp-for="Nome" class="form-control" placeholder="Nome">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Letras">Letras</label>
+            <input type="text" asp-for="Letras" class="form-control">
+        </div>
+    </div>    
+
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>

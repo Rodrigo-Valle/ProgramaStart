@@ -1,0 +1,15 @@
+@model projetomvc.DTO.GrupoDTO
+
+<form asp-controller="Grupo" asp-action="SalvarStarter" method="POST">
+
+    <input type="hidden" asp-for="Id">
+
+  <div class="form-group col-md-8">
+    <label asp-for="Starter">Scrum Master</label>
+    <select class="form-control" asp-for="Starter"
+      asp-items='@(new SelectList(@ViewBag.Starters,"Id","Nome"))'></select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>
+

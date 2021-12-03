@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetomvc.DTO;
 using projetomvc.Models;
@@ -9,8 +10,10 @@ using ProjetoProgramaStart.Data;
 
 namespace projetomvc.Controllers
 {
+    [Authorize(Policy = "Admin")]
     public class TecnologiaController : Controller
     {
+        
         private readonly ApplicationDbContext _database;
 
         public TecnologiaController(ApplicationDbContext database){

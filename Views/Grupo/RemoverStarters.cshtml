@@ -1,0 +1,27 @@
+@model IEnumerable<projetomvc.Models.Starter>
+
+    
+
+<table id="grupos" class="table table-striped table-bordered">
+    <h1>Grupo</h1>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Letras</th>
+        </tr>
+    </thead>
+    <tbody> 
+        @foreach(var starter in Model) {
+            <tr>
+                <td>@starter.Id</td>
+                <td>@starter.Nome</td>
+                <td>@starter.Letras</td>
+                <td>
+                    <button class="btn btn-danger"><a href="/Grupo/ExcluirStarter/@starter.Id">Remover</a></button>
+                </td>
+            </tr>
+        }    
+    </tbody>
+
+</table>

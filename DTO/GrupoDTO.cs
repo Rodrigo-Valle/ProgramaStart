@@ -10,7 +10,8 @@ namespace projetomvc.DTO
     {
         public int Id { get; set; }
         public int Tecnologia { get; set; }
-        public int ScrumMaster { get; set; }
+        public string ScrumMaster { get; set; }
         public int ProgramaStart { get; set; }
+        public int? Starter { get; set; }
     }
 }

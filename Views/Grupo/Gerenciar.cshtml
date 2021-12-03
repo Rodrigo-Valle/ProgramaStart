@@ -1,0 +1,29 @@
+@model IEnumerable<projetomvc.Models.Grupo>
+
+<table id="grupos" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Tecnologia</th>
+            <th>Programa Start</th>
+            <th>ScrumMaster</th>
+        </tr>
+    </thead>
+    <tbody> 
+        @foreach(var grupo in Model) {
+            <tr>
+                <td>@grupo.Id</td>
+                <td>@grupo.Tecnologia.Nome</td>
+                <td>@grupo.ProgramaStart.Nome</td>
+                <td>@grupo.ScrumMaster.Nome</td>
+                              
+                <td>
+                    <button class="btn btn-secondary"><a href="/Grupo/ConsultarStarters/@grupo.Id">Consultar Starters</a></button> 
+                    <button class="btn btn-success"><a href="/Grupo/AdicionarStarters/@grupo.Id">Adicionar Starters</a></button>
+                    <button class="btn btn-danger"><a href="/Grupo/RemoverStarters/@grupo.Id">Excluir Starters</a></button>
+                </td>
+            </tr>
+        }    
+    </tbody>
+
+</table>

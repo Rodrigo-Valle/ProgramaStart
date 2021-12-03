@@ -1,18 +1,20 @@
+@model projetomvc.DTO.LoginDTO
+
 @{
    Layout = "_LayoutLogin";
 }
 <body class="text-center">
     <main class="form-signin">
-    <form>
+    <form asp-action="Logar" asp-controller="Home" method="post">
         <img class="img" src="https://blog.gft.com/wp-content/themes/gft-blog-2016-theme/assets/img/gft/gft-logo@4x.png" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Programa Start</h1>
 
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="Email">
+            <input asp-for="Email" type="email" class="form-control" id="floatingInput" placeholder="Email">
             
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Senha">
+            <input asp-for="Password" type="password" class="form-control" id="floatingPassword" placeholder="Senha">
         </div>
         
 

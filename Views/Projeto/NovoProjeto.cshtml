@@ -1,0 +1,19 @@
+@model projetomvc.DTO.ProjetoDTO
+
+
+<form asp-controller="Projeto" asp-action="Salvar" method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Etapa">Etapa</label>
+            <input type="text" asp-for="Etapa" class="form-control" placeholder="Nome">
+        </div>
+    </div>
+
+    <div class="form-group col-md-8">
+        <label asp-for="Modulo">Modulo</label>
+        <select class="form-control" asp-for="Modulo"
+            asp-items='@(new SelectList(@ViewBag.Modulo,"Id","Nome"))'></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+</form>

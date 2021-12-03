@@ -61,13 +61,27 @@
                             <li>
                                 <a class="linkmenu" asp-action="Cadastrar" asp-controller="Colaboradores">Cadastrar</a>
                             </li>
-                            <li>
-                                <a class="linkmenu" asp-action="Avaliacao" asp-controller="Colaboradores">Avaliações</a>
-                            </li>
                         </ul>
                     </div>
                 </li>
 
+                <a class="linkmenu" data-toggle="collapse" href="#collapseStarters" role="button"
+                    aria-expanded="false" aria-controls="collapseStarters">
+                    Starters
+                </a>
+                <div class="collapse" id="collapseStarters">
+                    <ul>
+                        <li>
+                            <a class="linkmenu" asp-action="Consultar" asp-controller="Starter">Consultar</a>
+                        </li>
+                        <li>
+                            <a class="linkmenu" asp-action="Cadastrar" asp-controller="Starter">Cadastrar</a>
+                        </li>
+                        <li>
+                            <a class="linkmenu" asp-action="Cadastrar" asp-controller="#">Avaliações</a>
+                        </li>
+                    </ul>
+                </div>
                 <li>
                     <a class="linkmenu" data-toggle="collapse" href="#collapseEquipes" role="button"
                         aria-expanded="false" aria-controls="collapseEquipes">
@@ -87,7 +101,7 @@
                         </ul>
                     </div>
                 </li>
-                
+
                 <div class="barra"></div>
 
                 <li>
@@ -96,7 +110,7 @@
                 </li>
 
             </ul>
-            
+
 
         </div>
 
