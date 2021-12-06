@@ -10,7 +10,7 @@
 - Não possui senha
 
 
-Para acessar como Scrum pode utilizar:
+Para acessar como Scrum pode cadastrar um novo na aplicação ou utilizar um dos já cadastrados, como:
 - User: yoda@gft.com
 - Senha: /Abc1234
 
