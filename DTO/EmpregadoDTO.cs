@@ -28,7 +28,10 @@ namespace projetomvc.DTO
         [StringLength(4, MinimumLength =4, ErrorMessage = "O campo deve ter {2} caracteres")]
         public string Letras { get; set; }
         [Required(ErrorMessage = "Selecione um {0}")]
-        public string Cargo { get; set; }      
+        public string Cargo { get; set; }    
+        [Required(ErrorMessage = "Campo {0} é Obrigatório")]  
+        [Url(ErrorMessage = "Entre com uma url valida")]
+        public string urlImagem {get; set;}
 
     }
 }

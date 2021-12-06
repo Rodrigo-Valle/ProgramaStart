@@ -15,9 +15,7 @@ namespace projetomvc.DTO
         [Required]
         public int ProjetoId { get; set; }
         [Required]
-        [DisplayFormat(DataFormatString = "{0:F1}")]
-        [RegularExpression(@"^\d+(\.\d{1,1})?$", ErrorMessage = "Nota de 0 a 10, com no maximo uma casa decimal")]
-        [Range(0.0, 10.0, ErrorMessage = "Nota de 0 a 10, com no maximo uma casa decimal")]
+        [Range(0, 10, ErrorMessage = "Nota de 0 a 10")]
         public double Avaliacao { get; set; }
     }
 }

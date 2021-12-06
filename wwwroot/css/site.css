@@ -48,6 +48,14 @@ header h1{
   font-size: 36px;
   
 }
+.profilepic{
+  height: 40px;
+  width: 40px;
+  border-radius: 40%;
+  border-color: white;
+  border-style: double;
+
+}
 
 aside{
   grid-area: m-aside;

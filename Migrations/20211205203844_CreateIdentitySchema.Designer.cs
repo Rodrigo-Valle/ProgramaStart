@@ -9,7 +9,7 @@ using ProjetoProgramaStart.Data;
 namespace ProjetoProgramaStart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211203034312_CreateIdentitySchema")]
+    [Migration("20211205203844_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

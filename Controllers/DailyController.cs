@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,15 +17,29 @@ namespace projetomvc.Controllers
             _database = database;
         }
 
+        public IActionResult Consultar(int id){
+            var daily = _database.Dailys.Include(x => x.Modulo).Where(x => x.Starter.Id == id).ToList();
+            return View(daily);
+        }
 
         public IActionResult Registrar(int id){
-            
             ViewBag.Modulo = _database.Modulos.ToList();
-
             var starterId = _database.Starters.First(x => x.Id == id);
             DailyDTO dto = new DailyDTO();
             dto.Starter = starterId.Id;
+            return View(dto);
+        }
 
+        public IActionResult Editar(int id){
+            ViewBag.Modulo = _database.Modulos.ToList();
+            var daily = _database.Dailys.Include(x => x.Modulo).Include(x => x.Starter).First(x => x.Id == id);
+            DailyDTO dto = new DailyDTO();
+            dto.Id = daily.Id;
+            dto.Data = daily.Data;
+            dto.Starter = daily.Starter.Id;
+            dto.Feito = daily.Feito;
+            dto.Fazendo = daily.Fazendo;
+            dto.Impedimentos = daily.Impedimentos;
             return View(dto);
         }
 
@@ -46,28 +57,11 @@ namespace projetomvc.Controllers
             daily.Modulo = _database.Modulos.First(x => x.Id == dto.Modulo);
             _database.Dailys.Add(daily);
             _database.SaveChanges();
-            return RedirectToAction("Consultar","Daily");
+            return RedirectToAction("Index","Scrum");
             }
             else{
                 return RedirectToAction("Registrar","Scrum", dto);
             }
-        }
-        public IActionResult Consultar(int id){
-            var daily = _database.Dailys.Include(x => x.Modulo).Where(x => x.Starter.Id == id).ToList();
-            return View(daily);
-        }
-
-        public IActionResult Editar(int id){
-            ViewBag.Modulo = _database.Modulos.ToList();
-            var daily = _database.Dailys.Include(x => x.Modulo).Include(x => x.Starter).First(x => x.Id == id);
-            DailyDTO dto = new DailyDTO();
-            dto.Id = daily.Id;
-            dto.Data = daily.Data;
-            dto.Starter = daily.Starter.Id;
-            dto.Feito = daily.Feito;
-            dto.Fazendo = daily.Fazendo;
-            dto.Impedimentos = daily.Impedimentos;
-            return View(dto);
         }
 
         [HttpPost]
@@ -85,10 +79,10 @@ namespace projetomvc.Controllers
             daily.Modulo = _database.Modulos.First(x => x.Id == dto.Modulo);
             _database.Dailys.Update(daily);
             _database.SaveChanges();
-            return RedirectToAction("Consultar", "Daily");
+            return RedirectToAction("Index", "Scrum");
             }
             else{
-                return RedirectToAction("Consultar", "Daily");
+                return RedirectToAction("Index", "Scrum");
             }
         }
 
@@ -96,10 +90,7 @@ namespace projetomvc.Controllers
             var daily = _database.Dailys.First(x => x.Id == id);
             _database.Dailys.Remove(daily);
             _database.SaveChanges();
-            return RedirectToAction("Consultar", "Daily");
+            return RedirectToAction("Index", "Scrum");
         }
-
-
-
     }
 }

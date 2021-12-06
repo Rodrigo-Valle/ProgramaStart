@@ -22,7 +22,7 @@ namespace projetomvc.Data
             _database = database;
         }
 
-        public async Task Seed()
+        public void Seed()
         {
             if (_database.Starters.Any() || _database.Tecnologias.Any() || _database.Dailys.Any() ||
                 _database.Empregados.Any() || _database.Grupos.Any() || _database.Modulos.Any() ||
@@ -141,7 +141,7 @@ namespace projetomvc.Data
             _database.Starters.AddRange(st1, st2, st3, st4, st5, st6, st7, st8);
             _database.Projetos.AddRange(pj1, pj2, pj3, pj4, pj5, pj6);
             _database.ProjetosStarters.AddRange(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24);
-            _database.Dailys.AddRange(d1, d2, d3, d4, d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30,d31,d32);
+            _database.Dailys.AddRange(d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31, d32);
             _database.SaveChanges();
         }
 
@@ -157,8 +157,6 @@ namespace projetomvc.Data
             };
             // Armazena os dados do usuário na tabela AspNetUsers
             var result = await _userManager.CreateAsync(user, "/Gft2021");
-
-
         }
 
         public async Task ScrumMasterUm()
@@ -171,8 +169,7 @@ namespace projetomvc.Data
                 Letras = "adoy",
                 Cargo = Cargo.ScrumMaster
             };
-            // Armazena os dados do usuário na tabela AspNetUsers
-            var result = await _userManager.CreateAsync(user, "/Abc123");
+            var result = await _userManager.CreateAsync(user, "/Abc1234");
         }
         public async Task ScrumMasterDois()
         {
@@ -184,8 +181,7 @@ namespace projetomvc.Data
                 Letras = "juke",
                 Cargo = Cargo.ScrumMaster
             };
-            // Armazena os dados do usuário na tabela AspNetUsers
-            var result = await _userManager.CreateAsync(user, "/Abc123");
+            var result = await _userManager.CreateAsync(user, "/Abc1234");
         }
         public async Task AddClaim()
         {
@@ -194,16 +190,14 @@ namespace projetomvc.Data
             var scrumDois = _database.Empregados.FirstOrDefault(x => x.Email == "jukes@gft.com");
             var adminClaim = new Claim("Permissao", "Administrador");
             var scrumClaim = new Claim("Permissao", "ScrumMaster");
-            var result = await _userManager.AddClaimAsync(admin, adminClaim);
-            result = await _userManager.AddClaimAsync(scrumUm, scrumClaim);
-            result = await _userManager.AddClaimAsync(scrumDois, scrumClaim);
-
-
+            var urlFoto = new Claim("url", "https://th.bing.com/th/id/OIP.T6hDhL2GKU5XJRuc0uTUywHaHa?pid=ImgDet&w=500&h=500&rs=1" );
+            await _userManager.AddClaimAsync(admin, adminClaim);
+            await _userManager.AddClaimAsync(scrumUm, scrumClaim);
+            await _userManager.AddClaimAsync(scrumDois, scrumClaim);
+            await _userManager.AddClaimAsync(admin, urlFoto);
+            await _userManager.AddClaimAsync(scrumUm, urlFoto);
+            await _userManager.AddClaimAsync(scrumDois, urlFoto);
         }
-
-
-
-
     }
 
 }

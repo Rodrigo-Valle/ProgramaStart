@@ -22,8 +22,6 @@ namespace projetomvc.Controllers
             _userManager = userManager;
         }
 
-
-
         public IActionResult Index(){
             var id = _userManager.GetUserId(User);
             var user = _database.Empregados.First(x => x.Id == id);
@@ -35,16 +33,12 @@ namespace projetomvc.Controllers
                 ViewBag.Starter = _database.Starters.Where(x => x.Grupo.Id == grupo.Id);
                 return View(grupo);
             }
-
-            
         }
 
         public IActionResult ConsultarGrupoAdmin(int id){
             var grupo = _database.Grupos.First(x => x.Id == id);
             ViewBag.Starter = _database.Starters.Where(x => x.Grupo.Id == grupo.Id);
-            return View("/Views/Scrum/ConsultarGrupo.cshtml", grupo);
+            return View("/Views/Scrum/Index.cshtml", grupo);
         }
-
-        
     }
 }

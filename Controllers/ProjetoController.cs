@@ -32,10 +32,10 @@ namespace projetomvc.Controllers
                 _database.Projetos.Add(p);
                 _database.Modulos.Update(modulo);
                 _database.SaveChanges();
-                return RedirectToAction("Consultar","ProgramaStart");
+                return RedirectToAction("ConsultarProjeto","Projeto");
             }
             else{
-                return RedirectToAction("Consultar","ProgramaStart");
+                return RedirectToAction("ConsultarProjeto","Projeto");
             }
         }
 
@@ -50,6 +50,7 @@ namespace projetomvc.Controllers
             dto.Id = projeto.Id;
             dto.Etapa = projeto.Etapa;
             dto.Modulo = projeto.Modulo.Id;
+            ViewBag.Modulo = _database.Modulos.ToList();
             return View(dto);
         }
 
@@ -59,13 +60,13 @@ namespace projetomvc.Controllers
                 var projeto = _database.Projetos.Include(x => x.Modulo).First(x => x.Id == dto.Id);
                 projeto.Id = dto.Id;
                 projeto.Etapa = dto.Etapa;
-                projeto.Modulo = _database.Modulos.First(x => x.Id == dto.Id);
+                projeto.Modulo = _database.Modulos.First(x => x.Id == dto.Modulo);
                 _database.Projetos.Update(projeto);
                 _database.SaveChanges();
-                return RedirectToAction("ConsultarModulo", "Modulo");
+                return RedirectToAction("ConsultarProjeto", "Projeto");
             }
             else{
-                return RedirectToAction("ConsultarModulo", "Modulo");
+                return RedirectToAction("ConsultarProjeto", "Projeto");
             }
         }
 
@@ -73,7 +74,7 @@ namespace projetomvc.Controllers
             var projeto = _database.Projetos.First(x => x.Id == id);
             _database.Remove(projeto);
             _database.SaveChanges();
-            return RedirectToAction("ConsultarModulo", "Modulo");
+            return RedirectToAction("ConsultarProjeto", "Projeto");
         }
     }
 }

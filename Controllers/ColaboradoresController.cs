@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -19,24 +18,17 @@ namespace projetomvc.Controllers
     [Authorize(Policy = "Admin")]
     public class ColaboradoresController : Controller
     {
-
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
         public readonly ApplicationDbContext _database;
 
         public ColaboradoresController(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender,
             ApplicationDbContext database)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _logger = logger;
-            _emailSender = emailSender;
             _database = database;
         }
 
@@ -65,7 +57,7 @@ namespace projetomvc.Controllers
                 // Armazena os dados do usuário na tabela AspNetUsers
                 var result = await _userManager.CreateAsync(user, empregado.Senha);
                 await _userManager.AddClaimAsync(user, new Claim("Permissao", user.Cargo.ToString()));
-
+                await _userManager.AddClaimAsync(user, new Claim("url", empregado.urlImagem));
                 // Se o usuário foi criado com sucesso, faz o login do usuário
                 // usando o serviço SignInManager e redireciona para o Método Action Index
                 //if (result.Succeeded)
@@ -85,13 +77,52 @@ namespace projetomvc.Controllers
             }
         }
 
+        public IActionResult Editar(string id){
+            var e = _database.Empregados.First(x => x.Id == id);
+            EmpregadoDTO dto = new EmpregadoDTO();
+            dto.Id = e.Id;
+            dto.Nome = e.Nome;
+            dto.Letras = e.Letras;
+            dto.Email = e.Email;
+            dto.Cargo = e.Cargo.ToString();
+            dto.Senha = e.PasswordHash;
+            return View(dto);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Atualiar(EmpregadoDTO dto)
+        {
+            var user = _database.Empregados.First(x => x.Id == dto.Id);
+            user.UserName = dto.Nome;
+            user.Nome = dto.Nome;
+            user.Cargo = Enum.Parse<Cargo>(dto.Cargo);
+            user.Email = dto.Email;
+            user.Letras = dto.Letras;
+
+
+            var result = await _userManager.UpdateAsync(user);
+            await _userManager.AddClaimAsync(user, new Claim("Permissao", user.Cargo.ToString()));
+            await _userManager.AddClaimAsync(user, new Claim("url", dto.urlImagem));
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+            return RedirectToAction("Consultar", "Colaboradores");
+        }
+        
+
         public async Task<IActionResult> Excluir(string id){
             var user = await _userManager.FindByIdAsync(id);
+            if (_database.Grupos.Any(x => x.ScrumMaster.Id == id)){
+                ViewBag.M = "Há um grupo cadastrado para este usuario, exclua este grupo primeiro";
+                var lista = _database.Empregados.ToList();
+                return View("Consultar", lista);
+            }
+
             var result = await _userManager.DeleteAsync(user);
             return RedirectToAction("Consultar", "Colaboradores");
         }
-
-
-
     }
 }

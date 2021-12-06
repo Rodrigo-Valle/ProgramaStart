@@ -1,6 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
+
+
+@{
+    var image = User.Claims.FirstOrDefault(x => x.Type.Equals("url", StringComparison.OrdinalIgnoreCase))?.Value; 
+}
+
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,17 +34,23 @@
             <h1>Programa Start - Scrum Master</h1>
         </div>
         <div class="logout">
-            <p class="linkmenu">Olá @User.Identity.Name!</p>   
+            <img class="profilepic" src="@image" alt="">
+            <p class="linkmenu">Olá @User.Identity.Name!</p>
             <a class="linkmenu" asp-action="Logout" asp-controller="Home">Logout</a>
+
+
         </div>
 
     </header>
     <aside>
         <div>
             <ul class="sidebar">
-            @if (User.HasClaim("Permissao", "ScrumMaster")){ <li>
-                    <a class="linkmenu" asp-action="ConsultarGrupo" asp-controller="Scrum">Meu grupo</a>
-                </li>}
+                @if (User.HasClaim("Permissao", "ScrumMaster"))
+                { 
+                    <li>
+                        <a class="linkmenu" asp-action="Index" asp-controller="Scrum">Meu grupo</a>
+                    </li>
+                }
 
                 @if (User.HasClaim("Permissao", "Administrador"))
                 {
@@ -58,6 +71,8 @@
                             </ul>
                         </div>
                     </li>
+
+
                 }
 
 

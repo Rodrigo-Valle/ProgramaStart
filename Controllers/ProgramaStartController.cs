@@ -32,8 +32,6 @@ namespace projetomvc.Controllers
             return View(lista);
         }
 
-
-
         public IActionResult ConsultarTecnologias(){
             var lista = _database.Tecnologias.ToList();
             return View(lista);
@@ -49,7 +47,6 @@ namespace projetomvc.Controllers
             return View(lista);
         }
 
-
         [HttpPost]
         public IActionResult SalvarProgramaStart(ProgramaStart programaStartDto){
             if(ModelState.IsValid){
@@ -59,15 +56,29 @@ namespace projetomvc.Controllers
                 novoPrograma.DataFim = programaStartDto.DataFim;
                 _database.ProgramasStarter.Add(novoPrograma);
                 _database.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Consultar", "ProgramaStart");
             }
             else{
                 return View("../ProgramaStart/Cadastrar");
             }
-
         }
 
-
+        [HttpPost]
+        public IActionResult AtualizarProgramaStart(ProgramaStart programaStartDto){
+            if(ModelState.IsValid){
+                ProgramaStart novoPrograma = new ProgramaStart();
+                novoPrograma.Id = programaStartDto.Id;
+                novoPrograma.Nome = programaStartDto.Nome;
+                novoPrograma.DataInicio = programaStartDto.DataInicio;
+                novoPrograma.DataFim = programaStartDto.DataFim;
+                _database.ProgramasStarter.Update(novoPrograma);
+                _database.SaveChanges();
+                return RedirectToAction("Consultar", "ProgramaStart");
+            }
+            else{
+                return View("../ProgramaStart/Cadastrar");
+            }
+        }
 
         [HttpPost]
         public IActionResult SalvarTecnologia(Tecnologia tecnologiaDto){
@@ -78,13 +89,29 @@ namespace projetomvc.Controllers
 
                 _database.Tecnologias.Add(novaTecnologia);
                 _database.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Consultar", "ProgramaStart");
             }
             else{
                 return View("../ProgramaStart/Cadastrar");
             }
-
         }
 
+        public IActionResult Editar(int id){
+            ProgramaStartDTO dto = new ProgramaStartDTO();
+            var p = _database.ProgramasStarter.First(x => x.Id == id);
+            dto.Id = p.Id;
+            dto.Nome = p.Nome;
+            dto.DataInicio = p.DataInicio;
+            dto.DataFim = p.DataFim;
+            return View(dto);
+            
+        }
+
+        public IActionResult Excluir(int id){
+            var programa = _database.ProgramasStarter.First(x => x.Id == id);
+            _database.Remove(programa);
+            _database.SaveChanges();
+            return RedirectToAction("Consultar", "ProgramaStart");
+        }
     }
 }

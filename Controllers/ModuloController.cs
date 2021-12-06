@@ -19,7 +19,6 @@ namespace projetomvc.Controllers
             _database = database;
         }
 
-
         public IActionResult NovoModulo(){
             return View();
         }

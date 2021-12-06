@@ -13,13 +13,11 @@ namespace projetomvc.Controllers
     [Authorize(Policy = "Admin")]
     public class TecnologiaController : Controller
     {
-        
         private readonly ApplicationDbContext _database;
 
         public TecnologiaController(ApplicationDbContext database){
             _database = database;
         }
-
 
         public IActionResult NovaTecnologia(){
             return View();

@@ -33,6 +33,20 @@ namespace projetomvc.Controllers
             return View();
         }
 
+        public IActionResult Editar(int id)
+        {
+            var grupo = _database.Grupos.Include(x => x.Tecnologia).Include(x => x.ProgramaStart).Include(x => x.ScrumMaster).First(x => x.Id == id);
+            GrupoDTO dto = new GrupoDTO();
+            dto.Id = grupo.Id;
+            dto.ProgramaStart = grupo.ProgramaStart.Id;
+            dto.ScrumMaster = grupo.ScrumMaster.Id;
+            dto.Tecnologia = grupo.Tecnologia.Id;
+            ViewBag.Tec = _database.Tecnologias.ToList();
+            ViewBag.Empregado = _database.Empregados.Where(x => x.Cargo == Cargo.ScrumMaster).ToList();
+            ViewBag.ProgramaStart = _database.ProgramasStarter.ToList();
+            return View(dto);
+        }
+
         public IActionResult Salvar(GrupoDTO dto)
         {
             if (ModelState.IsValid)
@@ -49,22 +63,6 @@ namespace projetomvc.Controllers
             {
                 return RedirectToAction("Criar", "Grupo", dto);
             }
-
-
-
-        }
-        public IActionResult Editar(int id)
-        {
-            var grupo = _database.Grupos.Include(x => x.Tecnologia).Include(x => x.ProgramaStart).Include(x => x.ScrumMaster).First(x => x.Id == id);
-            GrupoDTO dto = new GrupoDTO();
-            dto.Id = grupo.Id;
-            dto.ProgramaStart = grupo.ProgramaStart.Id;
-            dto.ScrumMaster = grupo.ScrumMaster.Id;
-            dto.Tecnologia = grupo.Tecnologia.Id;
-            ViewBag.Tec = _database.Tecnologias.ToList();
-            ViewBag.Empregado = _database.Empregados.Where(x => x.Cargo == Cargo.ScrumMaster).ToList();
-            ViewBag.ProgramaStart = _database.ProgramasStarter.ToList();
-            return View(dto);
         }
 
         [HttpPost]
@@ -90,10 +88,18 @@ namespace projetomvc.Controllers
         public IActionResult Excluir(int id)
         {
             var grupo = _database.Grupos.First(x => x.Id == id);
+            if (_database.Starters.Any(x => x.Grupo.Id == grupo.Id))
+            {
+                ViewBag.M = "Este grupo possui starters, exclua estes starters primeiro";
+                var lista = _database.Grupos.Include(x => x.Tecnologia).Include(x => x.ProgramaStart).Include(x => x.ScrumMaster).ToList();
+                return View("Consultar", lista);
+            }
             _database.Grupos.Remove(grupo);
             _database.SaveChanges();
             return RedirectToAction("Consultar", "Grupo");
         }
+
+
 
         public IActionResult Gerenciar()
         {
@@ -134,11 +140,11 @@ namespace projetomvc.Controllers
                 grupo.Starter.Add(starter);
                 _database.Grupos.Update(grupo);
                 _database.SaveChanges();
-                return RedirectToAction("Consultar", "Grupo");
+                return RedirectToAction("Gerenciar", "Grupo");
             }
             else
             {
-                return RedirectToAction("Consultar", "Grupo");
+                return RedirectToAction("Gerenciar", "Grupo");
             }
         }
 
@@ -147,14 +153,14 @@ namespace projetomvc.Controllers
             var starters = _database.Starters.Where(x => x.Grupo.Id == id).ToList();
             return View(starters);
         }
-        public IActionResult ExcluirStarter(int id){
+        public IActionResult ExcluirStarter(int id)
+        {
             var starter = _database.Starters.Include(x => x.Grupo).First(x => x.Id == id);
             starter.Grupo = null;
             _database.Starters.Update(starter);
             _database.SaveChanges();
-            return RedirectToAction("Gerenciar","Grupo");
+            return RedirectToAction("Gerenciar", "Grupo");
         }
-
 
     }
 }

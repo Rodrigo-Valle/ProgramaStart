@@ -1,7 +1,8 @@
 @model projetomvc.DTO.EmpregadoDTO
 
-<form asp-controller="Colaboradores" asp-action="Atualizar" method="POST">
+<form asp-controller="Colaboradores" asp-action="Atualiar" method="POST">
     <input type="hidden" asp-for="Id">
+    <input type="hidden" asp-for="Senha">
 
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -19,18 +20,28 @@
         </div>
     </div>
 
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label asp-for="urlImagem">Url da Foto de Perfil</label>
+            <input type="text" asp-for="urlImagem" class="form-control">
+            <span asp-validation-for="urlImagem" class="text-danger"></span>
+        </div>
+    </div>
+
+
+
     <div class="form-group">
         <label asp-for="Cargo">Cargo</label><br>
         <select asp-for="Cargo" class="custom-select col-md-2">
             <option selected=""></option>
-            <option value="Administrador">Administrador</option>
-            <option value="ScrumMaster">ScrumMaster</option>
-            <span asp-validation-for="Cargo" class="text-danger"></span>
+            <option value="0">Administrador</option>
+            <option value="1">ScrumMaster</option>
         </select>
-        
+        <span asp-validation-for="Cargo" class="text-danger"></span>
+
     </div>
 
-        <div class="form-row">
+    <div class="form-row">
         <div class="form-group col-md-6">
             <label asp-for="Email">Email</label>
             <input type="text" asp-for="Email" class="form-control" placeholder="Nome">
@@ -38,15 +49,6 @@
         </div>
     </div>
 
-        <div class="form-row">
-        <div class="form-group col-md-6">
-            <label asp-for="Senha">Senha</label>
-            <input type="text" asp-for="Senha" class="form-control" placeholder="Nome">
-            <span asp-validation-for="Senha" class="text-danger"></span>
-        </div>
-    </div>
-
-    </fieldset>
 
     <button type="submit" class="btn btn-primary">Confirmar</button>
 </form>

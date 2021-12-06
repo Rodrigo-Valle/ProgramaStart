@@ -14,8 +14,6 @@ namespace projetomvc.Models
         public Empregado ScrumMaster { get; set; }
         public ICollection<Starter> Starter { get; set; } = new List<Starter>();
 
-
-
         public Grupo()
         {
 

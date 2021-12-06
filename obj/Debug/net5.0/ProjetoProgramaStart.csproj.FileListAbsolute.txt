@@ -193,3 +193,4 @@ C:\Users\ROTL\OneDrive - GFT Technologies SE\Desktop\Estágio\ProjetoMVC\Projeto
 C:\Users\ROTL\OneDrive - GFT Technologies SE\Desktop\Estágio\ProjetoMVC\ProjetoMVC\projetomvc\obj\Debug\net5.0\Razor\Views\Starter\Avaliacao.cshtml.g.cs
 C:\Users\ROTL\OneDrive - GFT Technologies SE\Desktop\Estágio\ProjetoMVC\ProjetoMVC\projetomvc\obj\Debug\net5.0\Razor\Views\Starter\Avaliar.cshtml.g.cs
 C:\Users\ROTL\OneDrive - GFT Technologies SE\Desktop\Estágio\ProjetoMVC\ProjetoMVC\projetomvc\obj\Debug\net5.0\Razor\Views\Starter\EditarAvaliacao.cshtml.g.cs
+C:\Users\ROTL\OneDrive - GFT Technologies SE\Desktop\Estágio\ProjetoMVC\ProjetoMVC\projetomvc\obj\Debug\net5.0\Razor\Views\ProgramaStart\Editar.cshtml.g.cs

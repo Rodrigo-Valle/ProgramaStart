@@ -14,6 +14,5 @@ namespace projetomvc.Models
         public string Letras { get; set; }
         public Cargo Cargo {get; set;}
 
-
     }
 }

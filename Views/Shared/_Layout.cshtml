@@ -1,6 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
+@{
+    var image = User.Claims.FirstOrDefault(x => x.Type.Equals("url", StringComparison.OrdinalIgnoreCase))?.Value; 
+}
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +15,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    
+
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
@@ -20,9 +24,12 @@
 
 <body>
     <header>
-        <div class="titulo"><h1>Programa Start - Admin</h1></div>
+        <div class="titulo">
+            <h1>Programa Start - Admin</h1>
+        </div>
         <div class="logout">
-            <p class="linkmenu">Olá @User.Identity.Name!</p>
+            <img class="profilepic" src="@image" alt="">
+            <p class="linkmenu">Olá @User.Identity.Name</p>
             <a class="linkmenu" asp-action="Logout" asp-controller="Home">Logout</a>
         </div>
     </header>
@@ -39,7 +46,7 @@
                         Programa Start
                     </a>
                     <div class="collapse" id="collapsePrograma">
-                        <ul  class="sidebar">
+                        <ul class="sidebar">
                             <li>
                                 <a class="linkmenu" asp-action="Consultar" asp-controller="ProgramaStart">Consultar</a>
                             </li>
@@ -75,8 +82,8 @@
                     </div>
                 </li>
 
-                <a class="linkmenu" data-toggle="collapse" href="#collapseStarters" role="button"
-                    aria-expanded="false" aria-controls="collapseStarters">
+                <a class="linkmenu" data-toggle="collapse" href="#collapseStarters" role="button" aria-expanded="false"
+                    aria-controls="collapseStarters">
                     Starters
                 </a>
                 <div class="collapse" id="collapseStarters">

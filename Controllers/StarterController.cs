@@ -27,7 +27,6 @@ namespace projetomvc.Controllers
             return View();
         }
 
-
         public IActionResult Consultar()
         {
             var lista = _database.Starters.ToList();
@@ -104,7 +103,6 @@ namespace projetomvc.Controllers
             ViewBag.Starter = _database.Starters.First(x => x.Id == id);
             ViewBag.Projeto = _database.Projetos.ToList();
             return View();
-
         }
 
         public IActionResult SalvarNota(ProjetoStarterDTO dto){
@@ -119,7 +117,7 @@ namespace projetomvc.Controllers
                 return RedirectToAction("Consultar", "Starter");
             }
             else{
-                return RedirectToAction("Avaliar", "Starter", dto);
+                return RedirectToAction("Consultar", "Starter", dto);
             }
         }
 
@@ -148,7 +146,7 @@ namespace projetomvc.Controllers
                 return RedirectToAction("Consultar", "Starter");
             }
             else{
-                return RedirectToAction("Avaliar", "Starter", dto);
+                return RedirectToAction("Consultar", "Starter");
             }
         }
 
@@ -158,9 +156,5 @@ namespace projetomvc.Controllers
             _database.SaveChanges();
             return RedirectToAction("Consultar", "Starter");
         }
-
-
-        
-
     }
 }

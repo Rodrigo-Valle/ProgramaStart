@@ -39,6 +39,8 @@ namespace ProjetoProgramaStart
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
 
+                        
+
             services.AddAuthorization(options => options.AddPolicy("Admin", policy => policy.RequireClaim("Permissao","Administrador")));
             services.AddAuthorization(options => options.AddPolicy("Scrum", policy => policy.RequireClaim("Permissao","ScrumMaster","Administrador")));
 
@@ -57,11 +59,7 @@ namespace ProjetoProgramaStart
             {
                 app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
-                seedingService.Seed().Wait();
-                
-
-                
-               
+                seedingService.Seed();
             }
             else
             {
@@ -86,10 +84,6 @@ namespace ProjetoProgramaStart
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-
-
         }
-
-
     }
 }
