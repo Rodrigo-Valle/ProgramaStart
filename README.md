@@ -1,8 +1,8 @@
 <h1 align="center">projeto MVC - Programa Start</h1>
 
 **Para acesso ao sistema como administrador:**
-- User: clecio.silva@gft.com
-- Senha: /Gft2021
+- User: admin@gft.com
+- Senha: /Abc2021
 
 **O seeding de dados ocorre no primeiro acesso:**
 - nome do banco: starter
