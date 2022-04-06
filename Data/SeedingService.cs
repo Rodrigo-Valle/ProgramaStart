@@ -149,14 +149,14 @@ namespace projetomvc.Data
         {
             var user = new Empregado
             {
-                UserName = "clecio.silva@gft.com",
-                Email = "clecio.silva@gft.com",
-                Nome = "Clecio Silva",
-                Letras = "clsi",
+                UserName = "admin@gft.com",
+                Email = "admin@gft.com",
+                Nome = "admin",
+                Letras = "admn",
                 Cargo = Cargo.Administrador
             };
             // Armazena os dados do usuário na tabela AspNetUsers
-            var result = await _userManager.CreateAsync(user, "/Gft2021");
+            var result = await _userManager.CreateAsync(user, "/Abc1234");
         }
 
         public async Task ScrumMasterUm()

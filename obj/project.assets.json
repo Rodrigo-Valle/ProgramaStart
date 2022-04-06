@@ -7567,11 +7567,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\ProjetoProgramaStart.csproj",
+      "projectUniqueName": "C:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\ProjetoProgramaStart.csproj",
       "projectName": "ProjetoProgramaStart",
-      "projectPath": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\ProjetoProgramaStart.csproj",
+      "projectPath": "C:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\ProjetoProgramaStart.csproj",
       "packagesPath": "C:\\Users\\ROTL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\obj\\",
+      "outputPath": "C:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ROTL\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -7645,7 +7645,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }

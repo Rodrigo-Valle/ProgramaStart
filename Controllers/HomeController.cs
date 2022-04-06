@@ -79,30 +79,30 @@ namespace ProjetoProgramaStart.Controllers
         public IActionResult AcessoNegado(){
             return View();
         }
-        public bool SendMail(LoginDTO dto){
-            try
-            {
-                var user = _database.Empregados.First(x => x.Email == dto.Email);
-                MailMessage _mailMessage = new MailMessage();
-                _mailMessage.From = new MailAddress("rodrigocostavalle2@gmail.com");
+        // public bool SendMail(LoginDTO dto){
+        //     try
+        //     {
+        //         var user = _database.Empregados.First(x => x.Email == dto.Email);
+        //         MailMessage _mailMessage = new MailMessage();
+        //         _mailMessage.From = new MailAddress("email de envio");
 
-                _mailMessage.CC.Add("rodrigocostavalle@gmail.com");
-                _mailMessage.Subject = "Teste";
-                _mailMessage.IsBodyHtml = true;
-                _mailMessage.Body = "O Scrum Master " + user.Nome + " Logou no sistema";
+        //         _mailMessage.CC.Add("email de recebimento");
+        //         _mailMessage.Subject = "Teste";
+        //         _mailMessage.IsBodyHtml = true;
+        //         _mailMessage.Body = "O Scrum Master " + user.Nome + " Logou no sistema";
 
-                SmtpClient _smtpClient = new SmtpClient("smtp.gmail.com", Convert.ToInt32("587"));
+        //         SmtpClient _smtpClient = new SmtpClient("smtp.gmail.com", Convert.ToInt32("587"));
 
-                _smtpClient.UseDefaultCredentials = false;
-                _smtpClient.Credentials = new NetworkCredential("rodrigocostavalle2@gmail.com", "/Abc123456");
-                _smtpClient.EnableSsl = true;
-                _smtpClient.Send(_mailMessage);
-                return true;
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //         _smtpClient.UseDefaultCredentials = false;
+        //         _smtpClient.Credentials = new NetworkCredential("email de envio", "senha email de envio");
+        //         _smtpClient.EnableSsl = true;
+        //         _smtpClient.Send(_mailMessage);
+        //         return true;
+        //     }
+        //     catch(Exception ex)
+        //     {
+        //         throw ex;
+        //     }
+        // }
     }
 }

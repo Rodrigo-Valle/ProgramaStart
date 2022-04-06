@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\ProjetoProgramaStart.csproj",
+  "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\ProjetoProgramaStart.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15619,223 +15619,223 @@
   "RootNamespace": "ProjetoProgramaStart",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\ProgramaStart\\Cadastrar.cshtml",
-      "TargetPath": "Views\\ProgramaStart\\Cadastrar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Colaboradores\\Consultar.cshtml",
-      "TargetPath": "Views\\Colaboradores\\Consultar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Daily\\Registrar.cshtml",
-      "TargetPath": "Views\\Daily\\Registrar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\Cadastrar.cshtml",
-      "TargetPath": "Views\\Starter\\Cadastrar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\ProgramaStart\\ConsultarTecnologias.cshtml",
-      "TargetPath": "Views\\ProgramaStart\\ConsultarTecnologias.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\Editar.cshtml",
-      "TargetPath": "Views\\Grupo\\Editar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Tecnologia\\Editar.cshtml",
-      "TargetPath": "Views\\Tecnologia\\Editar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Daily\\Consultar.cshtml",
-      "TargetPath": "Views\\Daily\\Consultar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\ProgramaStart\\Editar.cshtml",
-      "TargetPath": "Views\\ProgramaStart\\Editar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Colaboradores\\Editar.cshtml",
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Colaboradores\\Editar.cshtml",
       "TargetPath": "Views\\Colaboradores\\Editar.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\Gerenciar.cshtml",
-      "TargetPath": "Views\\Grupo\\Gerenciar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\Consultar.cshtml",
-      "TargetPath": "Views\\Starter\\Consultar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Modulo\\Editar.cshtml",
-      "TargetPath": "Views\\Modulo\\Editar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Home\\Login.cshtml",
-      "TargetPath": "Views\\Home\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\AdminScrum\\Consultar.cshtml",
-      "TargetPath": "Views\\AdminScrum\\Consultar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\RemoverStarters.cshtml",
-      "TargetPath": "Views\\Grupo\\RemoverStarters.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Daily\\Editar.cshtml",
-      "TargetPath": "Views\\Daily\\Editar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Home\\AcessoNegado.cshtml",
-      "TargetPath": "Views\\Home\\AcessoNegado.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\Criar.cshtml",
-      "TargetPath": "Views\\Grupo\\Criar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\ConsultarStarters.cshtml",
-      "TargetPath": "Views\\Grupo\\ConsultarStarters.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\AdicionarStarters.cshtml",
-      "TargetPath": "Views\\Grupo\\AdicionarStarters.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\EditarAvaliacao.cshtml",
-      "TargetPath": "Views\\Starter\\EditarAvaliacao.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\ProgramaStart\\ConsultarModulos.cshtml",
-      "TargetPath": "Views\\ProgramaStart\\ConsultarModulos.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Projeto\\Editar.cshtml",
-      "TargetPath": "Views\\Projeto\\Editar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Colaboradores\\Cadastrar.cshtml",
-      "TargetPath": "Views\\Colaboradores\\Cadastrar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\ProgramaStart\\Consultar.cshtml",
-      "TargetPath": "Views\\ProgramaStart\\Consultar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Projeto\\ConsultarProjeto.cshtml",
-      "TargetPath": "Views\\Projeto\\ConsultarProjeto.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Shared\\_LayoutLogin.cshtml",
-      "TargetPath": "Views\\Shared\\_LayoutLogin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\Editar.cshtml",
-      "TargetPath": "Views\\Starter\\Editar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\Avaliacao.cshtml",
-      "TargetPath": "Views\\Starter\\Avaliacao.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Modulo\\NovoModulo.cshtml",
-      "TargetPath": "Views\\Modulo\\NovoModulo.cshtml",
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Grupo\\Criar.cshtml",
+      "TargetPath": "Views\\Grupo\\Criar.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Scrum\\Index.cshtml",
-      "TargetPath": "Views\\Scrum\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Starter\\Avaliar.cshtml",
-      "TargetPath": "Views\\Starter\\Avaliar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Tecnologia\\NovaTecnologia.cshtml",
-      "TargetPath": "Views\\Tecnologia\\NovaTecnologia.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Grupo\\Consultar.cshtml",
-      "TargetPath": "Views\\Grupo\\Consultar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Projeto\\NovoProjeto.cshtml",
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Projeto\\NovoProjeto.cshtml",
       "TargetPath": "Views\\Projeto\\NovoProjeto.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\ROTL\\OneDrive - GFT Technologies SE\\Desktop\\Estágio\\ProjetoMVC\\ProjetoMVC\\projetomvc\\Views\\Shared\\_LayoutScrum.cshtml",
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Daily\\Registrar.cshtml",
+      "TargetPath": "Views\\Daily\\Registrar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Tecnologia\\Editar.cshtml",
+      "TargetPath": "Views\\Tecnologia\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Colaboradores\\Cadastrar.cshtml",
+      "TargetPath": "Views\\Colaboradores\\Cadastrar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Daily\\Editar.cshtml",
+      "TargetPath": "Views\\Daily\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Starter\\EditarAvaliacao.cshtml",
+      "TargetPath": "Views\\Starter\\EditarAvaliacao.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Starter\\Avaliar.cshtml",
+      "TargetPath": "Views\\Starter\\Avaliar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Grupo\\RemoverStarters.cshtml",
+      "TargetPath": "Views\\Grupo\\RemoverStarters.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Daily\\Consultar.cshtml",
+      "TargetPath": "Views\\Daily\\Consultar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Starter\\Avaliacao.cshtml",
+      "TargetPath": "Views\\Starter\\Avaliacao.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Grupo\\Gerenciar.cshtml",
+      "TargetPath": "Views\\Grupo\\Gerenciar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Grupo\\AdicionarStarters.cshtml",
+      "TargetPath": "Views\\Grupo\\AdicionarStarters.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\ProgramaStart\\Consultar.cshtml",
+      "TargetPath": "Views\\ProgramaStart\\Consultar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\ProgramaStart\\ConsultarModulos.cshtml",
+      "TargetPath": "Views\\ProgramaStart\\ConsultarModulos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\ProgramaStart\\Editar.cshtml",
+      "TargetPath": "Views\\ProgramaStart\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Modulo\\Editar.cshtml",
+      "TargetPath": "Views\\Modulo\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Projeto\\ConsultarProjeto.cshtml",
+      "TargetPath": "Views\\Projeto\\ConsultarProjeto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Home\\Login.cshtml",
+      "TargetPath": "Views\\Home\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Grupo\\ConsultarStarters.cshtml",
+      "TargetPath": "Views\\Grupo\\ConsultarStarters.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\ProgramaStart\\Cadastrar.cshtml",
+      "TargetPath": "Views\\ProgramaStart\\Cadastrar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Starter\\Editar.cshtml",
+      "TargetPath": "Views\\Starter\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Tecnologia\\NovaTecnologia.cshtml",
+      "TargetPath": "Views\\Tecnologia\\NovaTecnologia.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Shared\\_LayoutScrum.cshtml",
       "TargetPath": "Views\\Shared\\_LayoutScrum.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\ProgramaStart\\ConsultarTecnologias.cshtml",
+      "TargetPath": "Views\\ProgramaStart\\ConsultarTecnologias.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Grupo\\Consultar.cshtml",
+      "TargetPath": "Views\\Grupo\\Consultar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Starter\\Consultar.cshtml",
+      "TargetPath": "Views\\Starter\\Consultar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Home\\AcessoNegado.cshtml",
+      "TargetPath": "Views\\Home\\AcessoNegado.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Grupo\\Editar.cshtml",
+      "TargetPath": "Views\\Grupo\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Shared\\_LayoutLogin.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutLogin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Starter\\Cadastrar.cshtml",
+      "TargetPath": "Views\\Starter\\Cadastrar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\AdminScrum\\Consultar.cshtml",
+      "TargetPath": "Views\\AdminScrum\\Consultar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Colaboradores\\Consultar.cshtml",
+      "TargetPath": "Views\\Colaboradores\\Consultar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Scrum\\Index.cshtml",
+      "TargetPath": "Views\\Scrum\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Modulo\\NovoModulo.cshtml",
+      "TargetPath": "Views\\Modulo\\NovoModulo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\ROTL\\My Private Documents\\MVC\\projetomvc\\Views\\Projeto\\Editar.cshtml",
+      "TargetPath": "Views\\Projeto\\Editar.cshtml",
       "FileKind": "mvc"
     }
   ],
